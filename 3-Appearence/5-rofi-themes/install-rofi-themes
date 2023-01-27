@@ -1,0 +1,11 @@
+#!/bin/sh
+
+tput bold
+echo -e "\e[1;34mCopy rofi themes...\e[1;37m";
+mkdir -p /home/plr/.local/share/rofi/themes
+sudo cp -R themes/* /home/plr/.local/share/rofi/themes
+
+
+
+
+

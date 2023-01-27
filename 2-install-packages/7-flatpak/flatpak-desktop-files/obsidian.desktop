@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Obsidian
+Exec=flatpak run md.obsidian.Obsidian
+MimeType=x-scheme-handler/obsidian
+Terminal=false
+Type=Application
+Icon=obsidian
+StartupWMClass=logseq
+Comment=Markdown-based knowledge base
+Categories=Education;

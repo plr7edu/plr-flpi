@@ -1,0 +1,36 @@
+#!/bin/bash
+
+config_dir=/etc/lightdm/
+
+tput bold
+echo -e "\e[1;34mBackup lightdm config...\e[1;37m";
+tput sgr0
+
+#Backup orginal config
+cd $config_dir
+sudo rm -rf lightdm.conf.bak
+sudo cp lightdm.conf lightdm.conf.bak
+echo "Backup Complete."
+echo " "
+
+cd -
+
+
+#Copy & replace file
+echo "Copy slick-greeter config files..."
+sudo cp -if  config/* $config_dir
+echo " "
+
+#Copy lightdm user data folder
+sudo cp -rf lightdm-images /usr/share
+echo " "
+echo "done."
+
+
+
+
+
+
+
+
+

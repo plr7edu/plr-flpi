@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Authenticator
+Exec=flatpak run com.belmoussaoui.Authenticator
+MimeType=x-scheme-handler/authenticator
+Terminal=false
+Type=Application
+Icon=gnome-twofactorauth
+StartupWMClass=authenticator
+Comment=Generate Two-Factor Codes 
+Categories=Utility;

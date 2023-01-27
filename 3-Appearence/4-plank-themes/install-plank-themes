@@ -1,0 +1,11 @@
+#!/bin/sh
+
+tput bold
+echo -e "\e[1;34mCopy my plank themes...\e[1;37m";
+sudo cp -R themes/* /usr/share/plank/themes/
+
+
+
+
+
+

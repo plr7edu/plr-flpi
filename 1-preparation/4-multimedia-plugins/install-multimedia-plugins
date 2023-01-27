@@ -1,0 +1,28 @@
+#!/bin/bash
+##################################################################################################################
+#tput setaf 0 = black
+#tput setaf 1 = red
+#tput setaf 2 = green
+#tput setaf 3 = yellow
+#tput setaf 4 = dark blue
+#tput setaf 5 = purple
+#tput setaf 6 = cyan
+#tput setaf 7 = gray
+#tput setaf 8 = light blue
+##################################################################################################################
+
+tput setaf 3;
+echo "################################################################"
+echo "Install Multimedia Plugins ..."
+echo "################################################################"
+echo;tput sgr0
+
+sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel -y &&
+
+sudo dnf install lame\* --exclude=lame-devel -y &&
+
+sudo dnf group upgrade --with-optional Multimedia -y
+
+
+
+

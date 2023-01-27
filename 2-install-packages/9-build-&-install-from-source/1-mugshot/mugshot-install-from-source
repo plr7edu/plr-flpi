@@ -1,0 +1,42 @@
+#!/bin/bash
+##################################################################################################################
+#tput setaf 0 = black
+#tput setaf 1 = red
+#tput setaf 2 = green
+#tput setaf 3 = yellow
+#tput setaf 4 = dark blue
+#tput setaf 5 = purple
+#tput setaf 6 = cyan
+#tput setaf 7 = gray
+#tput setaf 8 = light blue
+##################################################################################################################
+
+tput setaf 3;
+echo "################################################################"
+echo "Bulid and Install Mugshot from source"
+echo "################################################################"
+echo;tput sgr0
+
+
+# Install Package Dependencies
+sudo dnf install intltool -y
+cd package-dependencies/python-distutils-extra-2.39/
+sudo python3 setup.py install
+
+# Install Mugshot
+cd ../../
+cd mugshot/
+python setup.py build
+sudo python3 setup.py install
+
+#  Copy "apps.mugshot.gschema.xml" File
+cp data/glib-2.0/schemas/org.bluesabre.mugshot.gschema.xml /usr/share/glib-2.0/schemas/
+sudo glib-compile-schemas /usr/share/glib-2.0/schemas
+
+
+tput setaf 3;
+echo "################################################################"
+echo "Mugshot Packages has been installed"
+echo "################################################################"
+echo;tput sgr0
+

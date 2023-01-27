@@ -1,0 +1,9 @@
+#!/bin/bash
+
+tput bold
+echo -e "\e[1;34mCopy kali xflock bin ...\e[1;37m";
+tput sgr0
+sudo cp xflock4-lockscreen/xflock4 /usr/bin/
+
+
+

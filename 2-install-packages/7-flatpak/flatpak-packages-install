@@ -1,0 +1,37 @@
+#!/bin/bash
+##################################################################################################################
+#tput setaf 0 = black
+#tput setaf 1 = red
+#tput setaf 2 = green
+#tput setaf 3 = yellow
+#tput setaf 4 = dark blue
+#tput setaf 5 = purple
+#tput setaf 6 = cyan
+#tput setaf 7 = gray
+#tput setaf 8 = light blue
+##################################################################################################################
+
+tput setaf 3;
+echo "################################################################"
+echo "Install Flatpak Packages ..."
+echo "################################################################"
+echo;tput sgr0
+
+#Install Packages
+flatpak install flathub md.obsidian.Obsidian -y &&
+flatpak install flathub com.logseq.Logseq -y &&
+flatpak install flathub com.belmoussaoui.Authenticator -y &&
+flatpak install flathub org.gnome.Solanum -y 
+flatpak install flathub com.github.micahflee.torbrowser-launcher -y
+flatpak install flathub org.cryptomator.Cryptomator -y
+
+
+#Copy Desktop Icons
+sudo cp flatpak-desktop-files/* /usr/share/applications/
+
+tput setaf 11;
+echo "################################################################"
+echo "Flatpak Packages has been installed"
+echo "################################################################"
+echo;tput sgr0
+

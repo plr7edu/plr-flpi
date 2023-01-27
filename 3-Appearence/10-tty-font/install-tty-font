@@ -1,0 +1,33 @@
+#!/bin/bash
+
+config_dir=/etc/
+
+# Install  Terminus-fonts
+sudo dnf install terminus-fonts-console.noarch -y
+
+tput bold
+echo -e "\e[1;34mBackup original vconsole.conf file ...\e[1;37m";
+tput sgr0
+
+# Backup orginal config
+cd $config_dir
+sudo cp vconsole.conf vconsole.conf.bak 
+echo "Backup Complete."
+echo " "
+
+cd -
+
+
+# Copy & replace file
+echo "Copy & replace edit vconsole.conf files..."
+sudo cp -if  edit/vconsole.conf $config_dir
+echo " "
+echo "done."
+
+
+
+
+
+
+
+

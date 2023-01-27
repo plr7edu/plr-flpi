@@ -1,0 +1,59 @@
+#!/bin/bash
+##################################################################################################################
+#tput setaf 0 = black
+#tput setaf 1 = red
+#tput setaf 2 = green
+#tput setaf 3 = yellow
+#tput setaf 4 = dark blue
+#tput setaf 5 = purple
+#tput setaf 6 = cyan
+#tput setaf 7 = gray
+#tput setaf 8 = light blue
+##################################################################################################################
+
+tput setaf 3;
+echo "################################################################"
+echo "Manual Install Packages ..."
+echo "################################################################"
+echo;tput sgr0
+
+# Sublime Text
+sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+sudo dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+sudo dnf install sublime-text -y
+
+# Visual Studio Code
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+dnf check-update
+sudo dnf install code -y
+
+# Font-manager
+sudo dnf copr enable jerrycasiano/FontManager -y
+sudo dnf install font-manager -y
+
+# Starship Prompt
+curl -sS https://starship.rs/install.sh | sh
+
+# Xtreme Download Manager
+sudo ./xdm/install.sh
+
+# Joplin
+wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
+
+# Glow - Render markdown on the CLI, with pizzazz! 
+echo '[charm]
+name=Charm
+baseurl=https://repo.charm.sh/yum/
+enabled=1
+gpgcheck=1
+gpgkey=https://repo.charm.sh/yum/gpg.key' | sudo tee /etc/yum.repos.d/charm.repo
+sudo yum install glow -y
+
+
+tput setaf 11;
+echo "################################################################"
+echo "Manual Install Packages has been installed"
+echo "################################################################"
+echo;tput sgr0
+

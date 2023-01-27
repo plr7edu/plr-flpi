@@ -1,0 +1,9 @@
+#!/bin/bash
+
+tput bold
+echo -e "\e[1;34mCopy mousepad (Texteditor) themes ...\e[1;37m";
+tput sgr0
+sudo cp -R styles/* /usr/share/gtksourceview-4/styles/
+
+
+

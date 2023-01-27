@@ -1,0 +1,30 @@
+#!/bin/bash
+
+config_dir=/usr/share/applications/
+
+tput bold
+echo -e "\e[1;34mBackup original desktop files ...\e[1;37m";
+tput sgr0
+
+#Backup orginal config
+cd $config_dir
+sudo cp hardinfo.desktop hardinfo.desktop.bak && cp gparted.desktop gparted.desktop.bak && cp ca.desrt.dconf-editor.desktop ca.desrt.dconf-editor.desktop.bak 
+echo "Backup Complete."
+echo " "
+
+cd -
+
+
+#Copy & replace file
+echo "Copy & replace edit desktop files..."
+sudo cp -if  edit-desktop/* $config_dir
+echo " "
+echo "done."
+
+
+
+
+
+
+
+

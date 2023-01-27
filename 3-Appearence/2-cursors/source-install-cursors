@@ -1,0 +1,9 @@
+#!/bin/bash
+
+tput bold
+echo -e "\e[1;34mInstall Cursors from source...\e[1;37m";
+tput sgr0
+sudo cp -R icons/* /usr/share/icons/ && sudo cp -R themes/* /usr/share/themes/
+
+
+

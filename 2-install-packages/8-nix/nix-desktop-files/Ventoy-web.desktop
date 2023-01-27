@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Ventoy-web
+Exec=exo-open --launch TerminalEmulator ventoy-web
+MimeType=x-scheme-handler/Ventoy-web
+Terminal=false
+Type=Application
+Icon=ventoy
+StartupWMClass=ventoy
+Comment=A New Bootable USB Solution
+Categories=Utility;
